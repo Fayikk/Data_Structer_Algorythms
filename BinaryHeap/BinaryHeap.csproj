@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BHeap.cs" />
+    <Compile Include="binaryheap.cs" />
     <Compile Include="MinHeap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\SortDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
