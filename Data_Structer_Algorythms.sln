@@ -43,6 +43,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority_Queue_Heap", "Prio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryHeap", "BinaryHeap\BinaryHeap.csproj", "{0F08B1A9-6297-4E5A-ACD7-57FD045FC65D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "disjoinsetnode", "disjoinsetnode", "{5F020AD6-A2E9-483C-B8A7-E2CD8EB62190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisJoin_SetNode", "DisJoin_SetNode\DisJoin_SetNode.csproj", "{8181615F-1A5E-405A-98FB-6CE612B9FFFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,10 @@ Global
 		{0F08B1A9-6297-4E5A-ACD7-57FD045FC65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F08B1A9-6297-4E5A-ACD7-57FD045FC65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F08B1A9-6297-4E5A-ACD7-57FD045FC65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8181615F-1A5E-405A-98FB-6CE612B9FFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8181615F-1A5E-405A-98FB-6CE612B9FFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8181615F-1A5E-405A-98FB-6CE612B9FFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8181615F-1A5E-405A-98FB-6CE612B9FFFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +110,7 @@ Global
 		{42FEA438-10D4-40CF-8C94-E4A95431F94B} = {EB39084F-AEEA-4A1C-A281-9B0CEBD2D0B7}
 		{85E18A9A-85D6-4749-90AC-4EDAC6064F15} = {7205FF78-3954-4C3F-8AC7-40AFA029141F}
 		{0F08B1A9-6297-4E5A-ACD7-57FD045FC65D} = {E0823BF8-7420-4D83-9C14-10F2C3ABAE03}
+		{8181615F-1A5E-405A-98FB-6CE612B9FFFE} = {5F020AD6-A2E9-483C-B8A7-E2CD8EB62190}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA98070F-EA93-4D35-AE28-FC9755025B60}

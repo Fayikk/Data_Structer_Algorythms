@@ -1,0 +1,98 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DisJoin_SetNode
+{
+    public class DisJoinSet<T>:IEnumerable<T>
+    {
+        private Dictionary<T, DisJoin<T>> set
+            = new Dictionary<T, DisJoin<T>>();
+        public int Count { get; set; }
+
+        public T Current => throw new NotImplementedException();
+
+        
+
+        //MakeSet implementasyonu
+        public void MakeSet(T value)
+        {
+            if (set.ContainsKey(value))
+            {
+                throw new Exception("The value already been defined.");
+                var newSet = new DisJoin<T>(value,0);
+                newSet.Parent = newSet;
+                set.Add(value, newSet);
+                Count++;
+            }
+        }
+        public T FindSet(T value)
+        {
+            if (!(set.ContainsKey(value)))
+            {
+                throw new Exception("The value is not in this set!");
+                
+            }
+            return findset(set[value]).Value;
+        }
+        private DisJoin<T> findset(DisJoin<T> node)
+        {
+            var parent = node.Parent;
+            if (node!=parent)
+            {
+                node.Parent = findset(node.Parent);
+                return node.Parent;
+            }
+            return parent;
+        }
+        public void Union(T valueA,T valueB)
+        {
+            if(valueA == null || valueB == null)
+            {
+                throw new ArgumentNullException();
+            }
+            var rootA = FindSet(valueA);
+            var rootB = FindSet(valueB);
+
+            if (rootA.Equals(rootB))
+            {
+                return;
+            }
+            var nodeA = set[rootA];
+            var nodeB = set[rootB];
+
+            //Uygulamalarımızın rank'a bağlı olarak çalışmasını organize edelim.
+            if (nodeA.Rank==nodeB.Rank)
+            {
+                nodeB.Parent = nodeA;
+                nodeA.Rank++;
+            }
+            else
+            {
+                if (nodeA.Rank<nodeB.Rank)
+                {
+
+                    nodeA.Parent = nodeB;
+                }
+                else
+                {
+                    nodeB.Parent=nodeA;
+                }
+
+            }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return set.Values.Select(x=>x.Value).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+}
